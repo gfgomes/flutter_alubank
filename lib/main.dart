@@ -10,8 +10,9 @@ class Alubank extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Alubank',
+      theme: ThemeData.dark(),
       home: Home(),
     );
   }
