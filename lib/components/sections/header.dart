@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alubank/themes/theme_colors.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -8,17 +9,14 @@ class Header extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: <Color>[
-              Color.fromRGBO(103, 99, 234, 1.0),
-              Color.fromRGBO(155, 105, 254, 1.0),
-              Color.fromRGBO(195, 107, 255, 1.0),
-            ]),
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: ThemeColors.headerGradient,
+        ),
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(10)),
       ),
-      height: 160,
-      child: const Padding(
+      height: 165,
+      child: Padding(
         padding: EdgeInsets.fromLTRB(16.0, 80.0, 16.0, 16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,25 +24,19 @@ class Header extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                // Text(
-                //   '\$1000.00',
-                //   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                // ),
                 Text.rich(
                   TextSpan(
                     text: '\$',
-                    style: TextStyle(fontSize: 16),
                     children: <TextSpan>[
                       TextSpan(
-                          text: '1000.00',
-                          style: TextStyle(
-                              fontSize: 28, fontWeight: FontWeight.bold)),
+                        text: '1000.00',
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
                     ],
                   ),
                 ),
-                Text(
+                const Text(
                   'Balanço disponível',
-                  style: TextStyle(fontSize: 16),
                 ),
               ],
             ),
