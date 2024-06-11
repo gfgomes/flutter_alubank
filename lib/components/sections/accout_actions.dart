@@ -11,9 +11,12 @@ class AccoutActions extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Ações da conta',
-            style: Theme.of(context).textTheme.titleMedium,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12.0),
+            child: Text(
+              'Ações da conta',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             InkWell(
